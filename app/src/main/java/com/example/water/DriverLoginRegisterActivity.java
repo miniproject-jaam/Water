@@ -173,7 +173,6 @@ public class DriverLoginRegisterActivity extends AppCompatActivity
 //
 //                                Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapActivity.class);
 //                                startActivity(intent);
-//
                                 loadingBar.dismiss();
                     }
                     else
@@ -188,20 +187,20 @@ public class DriverLoginRegisterActivity extends AppCompatActivity
     }
 
 
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-
-        mAuth.addAuthStateListener(firebaseAuthListner);
-    }
-
-
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-
-        mAuth.removeAuthStateListener(firebaseAuthListner);
-    }
+//    @Override
+//    protected void onStart()
+//    {
+//        super.onStart();
+//
+//        mAuth.addAuthStateListener(firebaseAuthListner);
+//    }
+//
+//
+//    @Override
+//    protected void onStop()
+//    {
+//        super.onStop();
+//
+//        mAuth.removeAuthStateListener(firebaseAuthListner);
+//    }
 }
