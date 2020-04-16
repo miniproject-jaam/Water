@@ -95,51 +95,53 @@ public class DriverLoginRegisterActivity extends AppCompatActivity
 
             }
         });
-//
-//
-//        LoginDriverButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                String email = DriverEmail.getText().toString();
-//                String password = DriverPassword.getText().toString();
-//
-//                if(TextUtils.isEmpty(email))
-//                {
-//                    Toast.makeText(DriverLoginRegisterActivity.this, "Please write your Email...", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                if(TextUtils.isEmpty(password))
-//                {
-//                    Toast.makeText(DriverLoginRegisterActivity.this, "Please write your Password...", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                else
-//                {
-//                    loadingBar.setTitle("Please wait :");
-//                    loadingBar.setMessage("While system is performing processing on your data...");
-//                    loadingBar.show();
-//
-//                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task)
-//                        {
-//                            if(task.isSuccessful())
-//                            {
-//                                Toast.makeText(DriverLoginRegisterActivity.this, "Sign In , Successful...", Toast.LENGTH_SHORT).show();
-//
-//                                Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapActivity.class);
-//                                startActivity(intent);
-//                            }
-//                            else
-//                            {
-//                                Toast.makeText(DriverLoginRegisterActivity.this, "Error Occurred, while Signing In... ", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    });
-//                }
-//            }
-//        });
+
+        LoginDriverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                String email = DriverEmail.getText().toString();
+                String password = DriverPassword.getText().toString();
+                SignInDriver(email,password);
+            }
+        });
+    }
+
+    private void SignInDriver(String email, String password) {
+        if(TextUtils.isEmpty(email))
+        {
+            Toast.makeText(DriverLoginRegisterActivity.this, "Please write your Email...", Toast.LENGTH_SHORT).show();
+        }
+
+        if(TextUtils.isEmpty(password))
+        {
+            Toast.makeText(DriverLoginRegisterActivity.this, "Please write your Password...", Toast.LENGTH_SHORT).show();
+        }
+
+        else
+        {
+            loadingBar.setTitle("Driver Login :");
+            loadingBar.setMessage("Please wait,while we are checking your credentials...");
+            loadingBar.show();
+
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task)
+                {
+                    if(task.isSuccessful())
+                    {
+                        Toast.makeText(DriverLoginRegisterActivity.this, "Sign In , Successful...", Toast.LENGTH_SHORT).show();
+
+//                        Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapActivity.class);
+//                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(DriverLoginRegisterActivity.this, "Error Occurred, while Signing In... ", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 
     private void RegisterDriver(String email, String password) {
