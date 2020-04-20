@@ -132,8 +132,8 @@ public class DriverLoginRegisterActivity extends AppCompatActivity
                     {
                         Toast.makeText(DriverLoginRegisterActivity.this, "Sign In , Successful...", Toast.LENGTH_SHORT).show();
 
-//                        Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(DriverLoginRegisterActivity.this, DriversMapsActivity.class);
+                        startActivity(intent);
                     }
                     else
                     {
@@ -173,8 +173,8 @@ public class DriverLoginRegisterActivity extends AppCompatActivity
 //                                driversDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(currentUserId);
 //                                driversDatabaseRef.setValue(true);
 //
-//                                Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapActivity.class);
-//                                startActivity(intent);
+                                Intent intent = new Intent(DriverLoginRegisterActivity.this, DriversMapsActivity.class);
+                                startActivity(intent);
                                 loadingBar.dismiss();
                     }
                     else
