@@ -125,8 +125,8 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
                     {
                         Toast.makeText(CustomerLoginRegisterActivity.this, "Sign In , Successful...", Toast.LENGTH_SHORT).show();
 
-//                                Intent intent = new Intent(CustomerLoginRegisterActivity.this, CustomersMapActivity.class);
-//                                startActivity(intent);
+                              Intent intent = new Intent(CustomerLoginRegisterActivity.this, CustomerMapsActivity.class);
+                              startActivity(intent);
 
                         loadingBar.dismiss();
                     }

@@ -1,8 +1,48 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.water.DriversMapsActivity" />
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.example.water.DriversMapsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/map5"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="594dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"/>
+
+     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/driver_settings_btn"
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="settings"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/driver_logout_btn"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="logout"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
